@@ -15,29 +15,29 @@
   <meta name="twitter:card" content="summary_large_image"/>
 
   <style>
-    :root{--bg:#07060b;--elev:#0e0b13;--soft:#0a0a12;--text:#e7faff;--muted:#8aa0b8;--brand:#00e5ff;--accent:#ff3df5;--ring:0 0 0 5px color-mix(in oklab,var(--brand),transparent 82%);}
+    :root{--bg:#0b0f1a;--elev:#10162a;--soft:#131b2e;--text:#eaf8ff;--muted:#90a8c6;--brand:#00e6ff;--accent:#ff44f9;--ring:0 0 0 6px color-mix(in oklab,var(--brand),transparent 78%);} 
     @media (prefers-color-scheme: light){
       :root{ --bg:#f7fbff; --elev:#ffffff; --soft:#f1f5fb; --text:#0b1320; --muted:#4b5b6f; }
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial; background:linear-gradient(180deg,var(--bg),var(--soft)); color:var(--text);}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,var(--bg),var(--soft));color:var(--text);} 
     a{color:inherit;text-decoration:none}
     .container{max-width:1080px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px); background:color-mix(in oklab,var(--elev),transparent 35%); border-bottom:1px solid color-mix(in oklab,var(--muted),transparent 70%); z-index:40}
     nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
     .pill{padding:8px 14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:999px;background:color-mix(in oklab,var(--elev),transparent 20%)}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:14px;padding:12px 16px;background:var(--brand);color:#001018;font-weight:700; box-shadow:0 10px 30px color-mix(in oklab,var(--brand),transparent 70%); transition:transform .06s ease, box-shadow .2s ease}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:14px;padding:12px 16px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#04101a;font-weight:700;box-shadow:0 10px 30px color-mix(in oklab,var(--brand),transparent 70%);transition:transform .06s ease, box-shadow .2s ease} 
     .btn:hover{transform:translateY(-1px)}
-    .btn.alt{background:transparent;color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 60%); box-shadow:none}
+    .btn.alt{background:transparent;color:var(--text);border:1px solid color-mix(in oklab,var(--muted),transparent 40%);box-shadow:none} 
     .ghost{border:1px dashed color-mix(in oklab,var(--muted),transparent 60%); border-radius:16px; background:color-mix(in oklab,var(--elev),transparent 10%)}
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
     .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05;text-shadow:0 0 10px color-mix(in oklab,var(--brand),transparent 70%),0 0 26px color-mix(in oklab,var(--accent),transparent 80%);}
     .lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:60ch}
     .stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
     .tag{font-size:12px;padding:6px 10px;background:color-mix(in oklab,var(--brand),transparent 88%); border:1px solid color-mix(in oklab,var(--brand),transparent 70%); color:var(--brand); border-radius:999px}
-    .card{background:var(--elev); border:1px solid color-mix(in oklab,var(--muted),transparent 70%); border-radius:18px; padding:18px; box-shadow:0 6px 30px rgba(0,0,0,.18)}
+    .card{background:var(--elev);border:1px solid color-mix(in oklab,var(--brand),transparent 85%);border-radius:18px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,.18),0 0 0 1px color-mix(in oklab,var(--accent),transparent 88%);transition:transform .08s ease, box-shadow .2s ease} 
     .grid{display:grid;gap:16px}
     .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -59,6 +59,8 @@
     }
     .copy{cursor:pointer}
     .ring:focus{outline:none; box-shadow:var(--ring)}
+    .card:hover{transform:translateY(-2px);box-shadow:0 12px 46px rgba(0,0,0,.26),0 0 0 2px color-mix(in oklab,var(--accent),transparent 70%)}
+    body::before{content:"";position:fixed;inset:-10%;z-index:-1;pointer-events:none;background:radial-gradient(600px 350px at 15% -5%, color-mix(in oklab,var(--brand),transparent 65%), transparent 70%),radial-gradient(700px 420px at 110% 0%, color-mix(in oklab,var(--accent),transparent 68%), transparent 72%);filter:blur(10px);opacity:.9}
   </style>
 </head>
 <body>
@@ -72,7 +74,7 @@
         <div style="display:flex;gap:10px">
           <a class="pill" href="#videos">Videos</a>
           <a class="pill" href="#highlights">Highlights</a>
-          <a class="pill" href="#press">Press</a>
+          <a class="pill" href="#specs">Specs</a>
           <a class="pill" href="#ncl">NCL</a>
           <a class="pill" href="#contact">Contact</a>
         </div>
@@ -98,11 +100,7 @@
           <a class="btn ring" href="#videos">Watch my work</a>
           <a class="btn alt ring" href="#contact">Connect</a>
         </div>
-        <div style="margin-top:8px;display:flex;gap:12px;align-items:center;color:var(--muted);font-size:14px">
-          <span>Resume:</span>
-          <!-- Replace resume.pdf with your actual file path -->
-          <a class="pill ring" href="resume.pdf" download>Download PDF</a>
-        </div>
+        
       </div>
       <div class="card ghost">
         <div class="list">
@@ -135,34 +133,21 @@
     <!-- VIDEOS -->
     <section id="videos" class="section">
       <h2>Featured Videos</h2>
-      <p class="lead" style="margin:6px 0 14px">Two short demos I often reference in conversations. (Plays inline, no ads when using privacy‑enhanced embeds.)</p>
-      <div class="grid cols-2">
-        <!-- Replace VIDEO_ID_1 and VIDEO_ID_2 with your YouTube IDs or full privacy URLs -->
+      <div class="grid cols-3">
         <div class="card video">
-          <iframe src="https://www.youtube.com/embed/JCKRQluMpqQ" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/JCKRQluMpqQ" title="YouTube video 1" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="card video">
-          <iframe src="https://www.youtube.com/embed/LE31-udDBuA" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/LE31-udDBuA" title="YouTube video 2" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
+        <a class="card video press-link" href="https://www.wpbf.com/article/florida-lake-worth-palm-beach-state-college-cybersecurity-symposium-hackers/60257777" target="_blank" rel="noreferrer noopener" title="WPBF 25 News segment">
+          <img class="press-img" src="wpbf-thumb.jpg" alt="Justin Wan on WPBF 25 News — Cybersecurity Symposium"/>
+        </a>
       </div>
     </section>
 
     <!-- PRESS -->
-    <section id="press" class="section">
-      <h2>Press</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <a class="press-link" href="https://www.wpbf.com/article/florida-lake-worth-palm-beach-state-college-cybersecurity-symposium-hackers/60257777" target="_blank" rel="noreferrer noopener">
-            <img class="press-img" src="wpbf-thumb.jpg" alt="Justin Wan on WPBF 25 News — Cybersecurity Symposium"/>
-          </a>
-          <strong style="display:block;margin-top:12px">WPBF 25 News — Cybersecurity Symposium Coverage</strong>
-          <p class="lead" style="margin-top:6px">Interview clip from Palm Beach State College’s cybersecurity event.</p>
-          <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap">
-            <a class="btn ring" href="https://www.wpbf.com/article/florida-lake-worth-palm-beach-state-college-cybersecurity-symposium-hackers/60257777" target="_blank" rel="noreferrer noopener">Watch on WPBF 25 News</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- HIGHLIGHTS -->
     <section id="highlights" class="section">
@@ -179,6 +164,34 @@
         <div class="card">
           <strong>NCL CTF Performance</strong>
           <p class="lead" style="margin-top:6px">96th percentile (353/8,573). Strengths: Scanning & Recon, Password Cracking, Forensics. <a class="pill" href="#ncl">See stats</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECS -->
+    <section id="specs" class="section">
+      <h2>Proxmox Server — Specs</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <strong>Core</strong>
+          <ul style="margin:10px 0 0 18px;line-height:1.6">
+            <li>CPU: AMD Ryzen 7 8700G (8C/16T)</li>
+            <li>Motherboard: ASUS TUF GAMING B650-PLUS WIFI (AM5)</li>
+            <li>Memory: 64 GB DDR5</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Accelerators</strong>
+          <ul style="margin:10px 0 0 18px;line-height:1.6">
+            <li>GPU: NVIDIA RTX 5070 Ti (VM passthrough)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Storage</strong>
+          <ul style="margin:10px 0 0 18px;line-height:1.6">
+            <li>Boot: 1 TB NVMe SSD (Proxmox)</li>
+            <li>Bulk: 2 × 8 TB NAS HDD (RAID 1)</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -223,7 +236,6 @@
       <div>© <span id="yr"></span> Justin. Built with plain HTML/CSS. <span class="kbd">1-file site</span></div>
       <div style="display:flex;gap:10px">
         <a class="pill" href="#">Top</a>
-        <a class="pill" href="resume.pdf" download>Resume</a>
       </div>
     </div>
   </footer>
