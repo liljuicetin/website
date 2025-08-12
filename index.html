@@ -15,10 +15,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
 
   <style>
-    :root{
-      --bg:#0b0f14; --elev:#10151d; --soft:#141b25; --text:#e6eef7; --muted:#9bb0c7; --brand:#00c2ff; --accent:#7c4dff;
-      --ring: 0 0 0 4px color-mix(in oklab, var(--brand), transparent 80%);
-    }
+    :root{--bg:#07060b;--elev:#0e0b13;--soft:#0a0a12;--text:#e7faff;--muted:#8aa0b8;--brand:#00e5ff;--accent:#ff3df5;--ring:0 0 0 5px color-mix(in oklab,var(--brand),transparent 82%);} @
     @media (prefers-color-scheme: light){
       :root{ --bg:#f7fbff; --elev:#ffffff; --soft:#f1f5fb; --text:#0b1320; --muted:#4b5b6f; }
     }
@@ -36,7 +33,7 @@
     .btn.alt{background:transparent;color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 60%); box-shadow:none}
     .ghost{border:1px dashed color-mix(in oklab,var(--muted),transparent 60%); border-radius:16px; background:color-mix(in oklab,var(--elev),transparent 10%)}
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
-    .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05}
+    .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05;text-shadow:0 0 10px color-mix(in oklab,var(--brand),transparent 70%),0 0 26px color-mix(in oklab,var(--accent),transparent 80%);} @
     .lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:60ch}
     .stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
     .tag{font-size:12px;padding:6px 10px;background:color-mix(in oklab,var(--brand),transparent 88%); border:1px solid color-mix(in oklab,var(--brand),transparent 70%); color:var(--brand); border-radius:999px}
@@ -74,6 +71,7 @@
         <div style="display:flex;gap:10px">
           <a class="pill" href="#videos">Videos</a>
           <a class="pill" href="#highlights">Highlights</a>
+          <a class="pill" href="#ncl">NCL</a>
           <a class="pill" href="#contact">Contact</a>
         </div>
       </nav>
@@ -85,13 +83,13 @@
     <section class="hero">
       <div>
         <h1>Hi, I’m Justin — Cybersecurity & Homelab Builder</h1>
-        <p class="lead">I work in healthcare IT and build offensive‑security demos and self‑hosted systems in my homelab. Ask me about Proxmox, Zigbee, Pi‑hole, OPNsense, and AI for security automation.</p>
+        <p class="lead">I work in healthcare IT and build offensive‑security demos and self‑hosted systems in my homelab. Ask me about Proxmox, Zigbee, Pi‑hole, OPNsense, and CTF tactics.</p>
         <div class="stack">
           <span class="tag">Security+ Certified</span>
           <span class="tag">Ethical Hackers Club</span>
           <span class="tag">Talks & Live Demos</span>
           <span class="tag">Proxmox + GPU Passthrough</span>
-          <span class="tag">LLM + Weaviate</span>
+          <span class="tag">NCL 96th Percentile</span>
         </div>
         <div style="display:flex;gap:12px;margin:18px 0 6px">
           <a class="btn ring" href="#videos">Watch my work</a>
@@ -120,11 +118,12 @@
             </div>
           </div>
           <div class="item">
-            <div style="width:36px;height:36px;border-radius:10px;background:color-mix(in oklab,var(--muted),transparent 70%)"></div>
+            <div style="width:36px;height:36px;border-radius:10px;background:color-mix(in oklab,var(--brand),transparent 60%)"></div>
             <div>
-              <strong>AI Health‑Gap Assistant (POC)</strong>
-              <div style="color:var(--muted);font-size:14px">Offline LLM with vector search for patient‑education gaps.</div>
+              <strong>NCL Spring 2025 — Individual Game</strong>
+              <div style="color:var(--muted);font-size:14px">96th percentile nationally; Rank 353/8,573. Top: Scanning & Recon (99th), Password Cracking (97th), Forensics (96th).</div>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -158,9 +157,32 @@
           <p class="lead" style="margin-top:6px">Network sniffing, cookie theft, and password hygiene talks for students and staff.</p>
         </div>
         <div class="card">
-          <strong>AI + Security</strong>
-          <p class="lead" style="margin-top:6px">LLM‑powered assistants for ticket triage and HL7 health‑gap extraction (RAG with Weaviate).</p>
+          <strong>NCL CTF Performance</strong>
+          <p class="lead" style="margin-top:6px">96th percentile (353/8,573). Strengths: Scanning & Recon, Password Cracking, Forensics. <a class="pill" href="#ncl">See stats</a></p>
         </div>
+      </div>
+    </section>
+
+    <!-- NCL SECTION -->
+    <section id="ncl" class="section">
+      <h2>NCL Spring 2025 — Individual Game</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <strong>Rank</strong>
+          <p class="lead" style="margin-top:6px">353 / 8,573 (96th percentile)</p>
+        </div>
+        <div class="card">
+          <strong>Score</strong>
+          <p class="lead" style="margin-top:6px">2,270 / 3,000 · Accuracy 72.9% · Completion 81.9%</p>
+        </div>
+        <div class="card">
+          <strong>Top Categories</strong>
+          <p class="lead" style="margin-top:6px">Scanning & Recon (99th) • Password Cracking (97th) • Forensics (96th)</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+        <a class="btn alt ring" href="https://cyberskyline.com/report/YC2ME8H07T6D" target="_blank" rel="noreferrer noopener">View verified report</a>
+        <a class="btn ring" href="ncl-scouting-report.pdf" download>Download scouting report (PDF)</a>
       </div>
     </section>
 
@@ -196,7 +218,7 @@
     "url": "https://your-domain.tld/",
     "sameAs": [
       "https://www.linkedin.com/in/your-link/",
-      "https://github.com/your-handle"
+      "https://github.com/liljuicetin"
     ],
     "knowsAbout": ["Proxmox","OPNsense","Wireshark","Home Assistant","Zigbee","Weaviate","LLMs"],
     "hasCredential": ["CompTIA Security+"]
