@@ -10,34 +10,69 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Justin — Cybersecurity & Homelab Projects"/>
-  <meta property="og:description" content="Quick one-pager with videos, highlights, and contact links."/>
-  <meta property="og:image" content=""/>
+  <meta property="og:description" content="Watch demos, see highlights, and get in touch."/>
+  <meta property="og:image" content="NASHVILLE-bg.webp"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
   <style>
-    :root{--bg:#0b0f1a;--elev:#10162a;--soft:#131b2e;--text:#eaf8ff;--muted:#90a8c6;--brand:#00e6ff;--accent:#ff44f9;--ring:0 0 0 6px color-mix(in oklab,var(--brand),transparent 78%);} 
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f7fbff; --elev:#ffffff; --soft:#f1f5fb; --text:#0b1320; --muted:#4b5b6f; }
+    :root{
+      --bg:#0b0f1a; --elev:#10162a; --soft:#131b2e; --text:#eaf8ff; --muted:#90a8c6;
+      --brand:#00e6ff; --accent:#ff44f9; --ring:0 0 0 6px color-mix(in oklab,var(--brand),transparent 78%);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,var(--bg),var(--soft));color:var(--text);} 
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+      background:linear-gradient(180deg,var(--bg),var(--soft));
+      color:var(--text);
+    }
+    /* Background photo layer (your Nashville pic) */
+    body::before{
+      content:"";
+      position:fixed; inset:0; z-index:-2;
+      background:
+        linear-gradient(to bottom, rgba(6,8,14,.65), rgba(6,8,14,.75)),
+        url('NASHVILLE-bg.webp') center / cover no-repeat;
+      filter:saturate(115%) contrast(105%);
+    }
+    /* Neon glow overlays */
+    body::after{
+      content:"";
+      position:fixed; inset:-10%; z-index:-1; pointer-events:none;
+      background:
+        radial-gradient(600px 350px at 15% -5%, color-mix(in oklab,var(--brand),transparent 65%), transparent 70%),
+        radial-gradient(700px 420px at 110% 0%, color-mix(in oklab,var(--accent),transparent 68%), transparent 72%);
+      filter:blur(12px);
+      opacity:.9;
+    }
+
     a{color:inherit;text-decoration:none}
     .container{max-width:1080px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px); background:color-mix(in oklab,var(--elev),transparent 35%); border-bottom:1px solid color-mix(in oklab,var(--muted),transparent 70%); z-index:40}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);
+      background:color-mix(in oklab,var(--elev),transparent 35%);
+      border-bottom:1px solid color-mix(in oklab,var(--muted),transparent 70%); z-index:40}
     nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
     .pill{padding:8px 14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:999px;background:color-mix(in oklab,var(--elev),transparent 20%)}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:14px;padding:12px 16px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#04101a;font-weight:700;box-shadow:0 10px 30px color-mix(in oklab,var(--brand),transparent 70%);transition:transform .06s ease, box-shadow .2s ease} 
-    .btn:hover{transform:translateY(-1px)}
-    .btn.alt{background:transparent;color:var(--text);border:1px solid color-mix(in oklab,var(--muted),transparent 40%);box-shadow:none} 
+    .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:14px;padding:12px 16px;
+      background:linear-gradient(135deg,var(--brand),var(--accent));color:#04101a;font-weight:700;
+      box-shadow:0 10px 30px color-mix(in oklab,var(--brand),transparent 70%);
+      transition:transform .06s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.alt{background:transparent;color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 40%); box-shadow:none}
     .ghost{border:1px dashed color-mix(in oklab,var(--muted),transparent 60%); border-radius:16px; background:color-mix(in oklab,var(--elev),transparent 10%)}
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
-    .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05;text-shadow:0 0 10px color-mix(in oklab,var(--brand),transparent 70%),0 0 26px color-mix(in oklab,var(--accent),transparent 80%);}
+    .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05;
+      text-shadow:0 0 10px color-mix(in oklab,var(--brand),transparent 70%),0 0 26px color-mix(in oklab,var(--accent),transparent 80%)}
     .lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:60ch}
     .stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .tag{font-size:12px;padding:6px 10px;background:color-mix(in oklab,var(--brand),transparent 88%); border:1px solid color-mix(in oklab,var(--brand),transparent 70%); color:var(--brand); border-radius:999px}
-    .card{background:var(--elev);border:1px solid color-mix(in oklab,var(--brand),transparent 85%);border-radius:18px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,.18),0 0 0 1px color-mix(in oklab,var(--accent),transparent 88%);transition:transform .08s ease, box-shadow .2s ease} 
+    .tag{font-size:12px;padding:6px 10px;background:color-mix(in oklab,var(--brand),transparent 88%);
+      border:1px solid color-mix(in oklab,var(--brand),transparent 70%); color:var(--brand); border-radius:999px}
+    .card{background:var(--elev); border:1px solid color-mix(in oklab,var(--brand),transparent 85%);
+      border-radius:18px; padding:18px; box-shadow:0 6px 30px rgba(0,0,0,.18),0 0 0 1px color-mix(in oklab,var(--accent),transparent 88%);
+      transition:transform .08s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 12px 46px rgba(0,0,0,.26),0 0 0 2px color-mix(in oklab,var(--accent),transparent 70%)}
     .grid{display:grid;gap:16px}
     .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -45,22 +80,18 @@
     h2{font-size:22px;margin:0 0 12px}
     .video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid color-mix(in oklab,var(--muted),transparent 70%)}
     .video iframe{position:absolute;inset:0;width:100%;height:100%}
-    .press-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid color-mix(in oklab,var(--brand),transparent 70%);box-shadow:0 0 0 1px color-mix(in oklab,var(--accent),transparent 85%),0 10px 30px rgba(0,0,0,.2)}
-    .press-link:hover .press-img{box-shadow:0 0 0 3px color-mix(in oklab,var(--brand),transparent 60%),0 10px 40px color-mix(in oklab,var(--accent),transparent 85%)}
     .list{display:grid;gap:10px}
     .list .item{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:14px;background:linear-gradient(180deg,color-mix(in oklab,var(--elev),transparent 0%),color-mix(in oklab,var(--elev),transparent 10%))}
     .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; padding:2px 6px; border-radius:6px; background:color-mix(in oklab,var(--text),transparent 92%); color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 70%)}
+    .press-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid color-mix(in oklab,var(--brand),transparent 70%);box-shadow:0 0 0 1px color-mix(in oklab,var(--accent),transparent 85%),0 10px 30px rgba(0,0,0,.2)}
     footer{padding:28px 0;color:var(--muted);font-size:14px}
-    .qr{display:none}media (max-width:900px){
+    .copy{cursor:pointer}
+    .ring:focus{outline:none; box-shadow:var(--ring)}
+    @media (max-width:900px){
       .hero{grid-template-columns:1fr}
-      .qr{display:none}
       .grid.cols-3{grid-template-columns:1fr}
       .grid.cols-2{grid-template-columns:1fr}
     }
-    .copy{cursor:pointer}
-    .ring:focus{outline:none; box-shadow:var(--ring)}
-    .card:hover{transform:translateY(-2px);box-shadow:0 12px 46px rgba(0,0,0,.26),0 0 0 2px color-mix(in oklab,var(--accent),transparent 70%)}
-    body::before{content:"";position:fixed;inset:-10%;z-index:-1;pointer-events:none;background:radial-gradient(600px 350px at 15% -5%, color-mix(in oklab,var(--brand),transparent 65%), transparent 70%),radial-gradient(700px 420px at 110% 0%, color-mix(in oklab,var(--accent),transparent 68%), transparent 72%);filter:blur(10px);opacity:.9}
   </style>
 </head>
 <body>
@@ -87,7 +118,7 @@
     <section class="hero">
       <div>
         <h1>Hi, I’m Justin — Cybersecurity & Homelab Builder</h1>
-        <p class="lead">I work in healthcare IT and build offensive‑security demos and self‑hosted systems in my homelab. Ask me about Proxmox, Zigbee, Pi‑hole, OPNsense, and CTF tactics.</p>
+        <p class="lead">I work in healthcare IT and build offensive-security demos and self-hosted systems in my homelab. Ask me about Proxmox, Zigbee, Pi-hole, OPNsense, and CTF tactics.</p>
         <div class="stack">
           <span class="tag">Security+ Certified</span>
           <span class="tag">Ethical Hackers Club</span>
@@ -100,7 +131,6 @@
           <a class="btn ring" href="#videos">Watch my work</a>
           <a class="btn alt ring" href="#contact">Connect</a>
         </div>
-        
       </div>
       <div class="card ghost">
         <div class="list">
@@ -114,8 +144,8 @@
           <div class="item">
             <div style="width:36px;height:36px;border-radius:10px;background:color-mix(in oklab,var(--brand),transparent 70%)"></div>
             <div>
-              <strong>Home Assistant + Zigbee Automations</strong>
-              <div style="color:var(--muted);font-size:14px">Local‑first automations with Sonoff ZBDongle‑P and HA.</div>
+              <strong>Home Assistant Automations</strong>
+              <div style="color:var(--muted);font-size:14px">Local-first scenes & schedules with HA.</div>
             </div>
           </div>
           <div class="item">
@@ -124,7 +154,6 @@
               <strong>NCL Spring 2025 — Individual Game</strong>
               <div style="color:var(--muted);font-size:14px">96th percentile nationally; Rank 353/8,573. Top: Scanning & Recon (99th), Password Cracking (97th), Forensics (96th).</div>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -140,14 +169,12 @@
         <div class="card video">
           <iframe src="https://www.youtube.com/embed/LE31-udDBuA" title="YouTube video 2" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <a class="card video press-link" href="https://www.wpbf.com/article/florida-lake-worth-palm-beach-state-college-cybersecurity-symposium-hackers/60257777" target="_blank" rel="noreferrer noopener" title="WPBF 25 News segment">
+        <!-- News thumbnail sits with the videos -->
+        <a class="card video" href="https://www.wpbf.com/article/florida-lake-worth-palm-beach-state-college-cybersecurity-symposium-hackers/60257777" target="_blank" rel="noreferrer noopener" title="WPBF 25 News segment">
           <img class="press-img" src="wpbf-thumb.jpg" alt="Justin Wan on WPBF 25 News — Cybersecurity Symposium"/>
         </a>
       </div>
     </section>
-
-    <!-- PRESS -->
-    
 
     <!-- HIGHLIGHTS -->
     <section id="highlights" class="section">
@@ -181,9 +208,9 @@
           </ul>
         </div>
         <div class="card">
-          <strong>Graphics</strong>
+          <strong>Graphics Card</strong>
           <ul style="margin:10px 0 0 18px;line-height:1.6">
-            <li>GPU: NVIDIA RTX 5070 Ti (VM passthrough)</li>
+            <li>NVIDIA RTX 5070 Ti (VM passthrough)</li>
           </ul>
         </div>
         <div class="card">
@@ -215,7 +242,6 @@
       </div>
       <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
         <a class="btn alt ring" href="https://cyberskyline.com/report/YC2ME8H07T6D" target="_blank" rel="noreferrer noopener">View verified report</a>
-        
       </div>
     </section>
 
@@ -227,7 +253,7 @@
         <a class="card btn alt ring" style="justify-content:center" href="https://www.linkedin.com/in/your-link" target="_blank" rel="noreferrer noopener">LinkedIn</a>
         <button class="card btn ring copy" style="justify-content:center" data-copy="bigjuicetin@gmail.com">Copy my email</button>
       </div>
-      <p class="lead" style="margin-top:12px">Open to security analyst roles, red‑team internships, and speaking invites.</p>
+      <p class="lead" style="margin-top:12px">Open to security analyst roles, red-team internships, and speaking invites.</p>
     </section>
   </main>
 
@@ -240,7 +266,7 @@
     </div>
   </footer>
 
-  <!-- JSON-LD (fill in your real details) -->
+  <!-- JSON-LD (update your LinkedIn URL if you want) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -250,7 +276,7 @@
     "url": "https://your-domain.tld/",
     "sameAs": [
       "https://www.linkedin.com/in/your-link/",
-      "https://github.com/your-handle"
+      "https://github.com/liljuicetin"
     ],
     "knowsAbout": ["Proxmox","OPNsense","Wireshark","Home Assistant","Zigbee"],
     "hasCredential": ["CompTIA Security+"]
@@ -261,7 +287,11 @@
     // Year + smooth scroll + copy email helper
     document.getElementById('yr').textContent = new Date().getFullYear();
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{ const id=a.getAttribute('href').slice(1); const el=document.getElementById(id); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); } });
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
     });
     document.querySelectorAll('.copy').forEach(btn=>{
       btn.addEventListener('click', async ()=>{
