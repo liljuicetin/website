@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
 
   <style>
-    :root{--bg:#07060b;--elev:#0e0b13;--soft:#0a0a12;--text:#e7faff;--muted:#8aa0b8;--brand:#00e5ff;--accent:#ff3df5;--ring:0 0 0 5px color-mix(in oklab,var(--brand),transparent 82%);} @
+    :root{--bg:#07060b;--elev:#0e0b13;--soft:#0a0a12;--text:#e7faff;--muted:#8aa0b8;--brand:#00e5ff;--accent:#ff3df5;--ring:0 0 0 5px color-mix(in oklab,var(--brand),transparent 82%);}
     @media (prefers-color-scheme: light){
       :root{ --bg:#f7fbff; --elev:#ffffff; --soft:#f1f5fb; --text:#0b1320; --muted:#4b5b6f; }
     }
@@ -33,7 +33,7 @@
     .btn.alt{background:transparent;color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 60%); box-shadow:none}
     .ghost{border:1px dashed color-mix(in oklab,var(--muted),transparent 60%); border-radius:16px; background:color-mix(in oklab,var(--elev),transparent 10%)}
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
-    .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05;text-shadow:0 0 10px color-mix(in oklab,var(--brand),transparent 70%),0 0 26px color-mix(in oklab,var(--accent),transparent 80%);} @
+    .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05;text-shadow:0 0 10px color-mix(in oklab,var(--brand),transparent 70%),0 0 26px color-mix(in oklab,var(--accent),transparent 80%);}
     .lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:60ch}
     .stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
     .tag{font-size:12px;padding:6px 10px;background:color-mix(in oklab,var(--brand),transparent 88%); border:1px solid color-mix(in oklab,var(--brand),transparent 70%); color:var(--brand); border-radius:999px}
@@ -49,8 +49,7 @@
     .list .item{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:14px;background:linear-gradient(180deg,color-mix(in oklab,var(--elev),transparent 0%),color-mix(in oklab,var(--elev),transparent 10%))}
     .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; padding:2px 6px; border-radius:6px; background:color-mix(in oklab,var(--text),transparent 92%); color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 70%)}
     footer{padding:28px 0;color:var(--muted);font-size:14px}
-    .qr{display:none}
-    @media (max-width:900px){
+    .qr{display:none}media (max-width:900px){
       .hero{grid-template-columns:1fr}
       .qr{display:none}
       .grid.cols-3{grid-template-columns:1fr}
@@ -71,6 +70,7 @@
         <div style="display:flex;gap:10px">
           <a class="pill" href="#videos">Videos</a>
           <a class="pill" href="#highlights">Highlights</a>
+          <a class="pill" href="#press">Press</a>
           <a class="pill" href="#ncl">NCL</a>
           <a class="pill" href="#contact">Contact</a>
         </div>
@@ -90,6 +90,7 @@
           <span class="tag">Talks & Live Demos</span>
           <span class="tag">Proxmox + GPU Passthrough</span>
           <span class="tag">NCL 96th Percentile</span>
+          <span class="tag">Featured on WPBF 25 News</span>
         </div>
         <div style="display:flex;gap:12px;margin:18px 0 6px">
           <a class="btn ring" href="#videos">Watch my work</a>
@@ -136,10 +137,24 @@
       <div class="grid cols-2">
         <!-- Replace VIDEO_ID_1 and VIDEO_ID_2 with your YouTube IDs or full privacy URLs -->
         <div class="card video">
-          <iframe src="https://www.youtube-nocookie.com/embed/JCKRQluMpqQ" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="card video">
-          <iframe src="https://www.youtube-nocookie.com/embed/LE31-udDBuA" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESS -->
+    <section id="press" class="section">
+      <h2>Press</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <strong>WPBF 25 News — Cybersecurity Symposium Coverage</strong>
+          <p class="lead" style="margin-top:6px">Interview clip from Palm Beach State College’s cybersecurity event.</p>
+          <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap">
+            <a class="btn ring" href="https://www.wpbf.com/article/florida-lake-worth-palm-beach-state-college-cybersecurity-symposium-hackers/60257777" target="_blank" rel="noreferrer noopener">Watch on WPBF 25 News</a>
+          </div>
         </div>
       </div>
     </section>
@@ -150,7 +165,7 @@
       <div class="grid cols-3">
         <div class="card">
           <strong>Proxmox Homelab</strong>
-          <p class="lead" style="margin-top:6px">GPU passthrough (RTX 5070 Ti), Windows/Kali/Ubuntu VMs, Docker services, and Zigbee2MQTT.</p>
+          <p class="lead" style="margin-top:6px">GPU passthrough (RTX 5070 Ti), Windows/Kali/Ubuntu VMs, Docker services.</p>
         </div>
         <div class="card">
           <strong>Security Demos</strong>
@@ -182,7 +197,7 @@
       </div>
       <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
         <a class="btn alt ring" href="https://cyberskyline.com/report/YC2ME8H07T6D" target="_blank" rel="noreferrer noopener">View verified report</a>
-        <a class="btn ring" href="ncl-scouting-report.pdf" download>Download scouting report (PDF)</a>
+        
       </div>
     </section>
 
@@ -218,9 +233,9 @@
     "url": "https://your-domain.tld/",
     "sameAs": [
       "https://www.linkedin.com/in/your-link/",
-      "https://github.com/liljuicetin"
+      "https://github.com/your-handle"
     ],
-    "knowsAbout": ["Proxmox","OPNsense","Wireshark","Home Assistant","Zigbee","Weaviate","LLMs"],
+    "knowsAbout": ["Proxmox","OPNsense","Wireshark","Home Assistant","Zigbee"],
     "hasCredential": ["CompTIA Security+"]
   }
   </script>
