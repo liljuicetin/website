@@ -45,6 +45,8 @@
     h2{font-size:22px;margin:0 0 12px}
     .video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid color-mix(in oklab,var(--muted),transparent 70%)}
     .video iframe{position:absolute;inset:0;width:100%;height:100%}
+    .press-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid color-mix(in oklab,var(--brand),transparent 70%);box-shadow:0 0 0 1px color-mix(in oklab,var(--accent),transparent 85%),0 10px 30px rgba(0,0,0,.2)}
+    .press-link:hover .press-img{box-shadow:0 0 0 3px color-mix(in oklab,var(--brand),transparent 60%),0 10px 40px color-mix(in oklab,var(--accent),transparent 85%)}
     .list{display:grid;gap:10px}
     .list .item{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:14px;background:linear-gradient(180deg,color-mix(in oklab,var(--elev),transparent 0%),color-mix(in oklab,var(--elev),transparent 10%))}
     .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; padding:2px 6px; border-radius:6px; background:color-mix(in oklab,var(--text),transparent 92%); color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 70%)}
@@ -137,10 +139,10 @@
       <div class="grid cols-2">
         <!-- Replace VIDEO_ID_1 and VIDEO_ID_2 with your YouTube IDs or full privacy URLs -->
         <div class="card video">
-          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="card video">
-          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -150,7 +152,10 @@
       <h2>Press</h2>
       <div class="grid cols-2">
         <div class="card">
-          <strong>WPBF 25 News — Cybersecurity Symposium Coverage</strong>
+          <a class="press-link" href="https://www.wpbf.com/article/florida-lake-worth-palm-beach-state-college-cybersecurity-symposium-hackers/60257777" target="_blank" rel="noreferrer noopener">
+            <img class="press-img" src="wpbf-thumb.jpg" alt="Justin Wan on WPBF 25 News — Cybersecurity Symposium"/>
+          </a>
+          <strong style="display:block;margin-top:12px">WPBF 25 News — Cybersecurity Symposium Coverage</strong>
           <p class="lead" style="margin-top:6px">Interview clip from Palm Beach State College’s cybersecurity event.</p>
           <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap">
             <a class="btn ring" href="https://www.wpbf.com/article/florida-lake-worth-palm-beach-state-college-cybersecurity-symposium-hackers/60257777" target="_blank" rel="noreferrer noopener">Watch on WPBF 25 News</a>
