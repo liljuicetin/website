@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Justin — Cybersecurity & Homelab Projects</title>
+  <meta name="description" content="One-page portfolio for conference networking: cybersecurity demos, homelab projects, and talks."/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2300c2ff'/%3E%3Cpath d='M18 34l10 10 18-24' stroke='white' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"/>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Justin — Cybersecurity & Homelab Projects"/>
+  <meta property="og:description" content="Quick one-pager with videos, highlights, and contact links."/>
+  <meta property="og:image" content=""/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <style>
+    :root{
+      --bg:#0b0f14; --elev:#10151d; --soft:#141b25; --text:#e6eef7; --muted:#9bb0c7; --brand:#00c2ff; --accent:#7c4dff;
+      --ring: 0 0 0 4px color-mix(in oklab, var(--brand), transparent 80%);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7fbff; --elev:#ffffff; --soft:#f1f5fb; --text:#0b1320; --muted:#4b5b6f; }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial; background:linear-gradient(180deg,var(--bg),var(--soft)); color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px); background:color-mix(in oklab,var(--elev),transparent 35%); border-bottom:1px solid color-mix(in oklab,var(--muted),transparent 70%); z-index:40}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .pill{padding:8px 14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:999px;background:color-mix(in oklab,var(--elev),transparent 20%)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:14px;padding:12px 16px;background:var(--brand);color:#001018;font-weight:700; box-shadow:0 10px 30px color-mix(in oklab,var(--brand),transparent 70%); transition:transform .06s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.alt{background:transparent;color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 60%); box-shadow:none}
+    .ghost{border:1px dashed color-mix(in oklab,var(--muted),transparent 60%); border-radius:16px; background:color-mix(in oklab,var(--elev),transparent 10%)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
+    .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05}
+    .lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:60ch}
+    .stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .tag{font-size:12px;padding:6px 10px;background:color-mix(in oklab,var(--brand),transparent 88%); border:1px solid color-mix(in oklab,var(--brand),transparent 70%); color:var(--brand); border-radius:999px}
+    .card{background:var(--elev); border:1px solid color-mix(in oklab,var(--muted),transparent 70%); border-radius:18px; padding:18px; box-shadow:0 6px 30px rgba(0,0,0,.18)}
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .section{padding:24px 0}
+    h2{font-size:22px;margin:0 0 12px}
+    .video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid color-mix(in oklab,var(--muted),transparent 70%)}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%}
+    .list{display:grid;gap:10px}
+    .list .item{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:14px;background:linear-gradient(180deg,color-mix(in oklab,var(--elev),transparent 0%),color-mix(in oklab,var(--elev),transparent 10%))}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; padding:2px 6px; border-radius:6px; background:color-mix(in oklab,var(--text),transparent 92%); color:var(--text); border:1px solid color-mix(in oklab,var(--muted),transparent 70%)}
+    footer{padding:28px 0;color:var(--muted);font-size:14px}
+    .qr{display:none}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .qr{display:none}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+    }
+    .copy{cursor:pointer}
+    .ring:focus{outline:none; box-shadow:var(--ring)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <span aria-hidden="true" style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--accent));display:inline-block"></span>
+          <span>Justin • Cybersecurity</span>
+        </div>
+        <div style="display:flex;gap:10px">
+          <a class="pill" href="#videos">Videos</a>
+          <a class="pill" href="#highlights">Highlights</a>
+          <a class="pill" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Hi, I’m Justin — Cybersecurity & Homelab Builder</h1>
+        <p class="lead">I work in healthcare IT and build offensive‑security demos and self‑hosted systems in my homelab. Ask me about Proxmox, Zigbee, Pi‑hole, OPNsense, and AI for security automation.</p>
+        <div class="stack">
+          <span class="tag">Security+ Certified</span>
+          <span class="tag">Ethical Hackers Club</span>
+          <span class="tag">Talks & Live Demos</span>
+          <span class="tag">Proxmox + GPU Passthrough</span>
+          <span class="tag">LLM + Weaviate</span>
+        </div>
+        <div style="display:flex;gap:12px;margin:18px 0 6px">
+          <a class="btn ring" href="#videos">Watch my work</a>
+          <a class="btn alt ring" href="#contact">Connect</a>
+        </div>
+        <div style="margin-top:8px;display:flex;gap:12px;align-items:center;color:var(--muted);font-size:14px">
+          <span>Resume:</span>
+          <!-- Replace resume.pdf with your actual file path -->
+          <a class="pill ring" href="resume.pdf" download>Download PDF</a>
+        </div>
+      </div>
+      <div class="card ghost">
+        <div class="list">
+          <div class="item">
+            <div style="width:36px;height:36px;border-radius:10px;background:color-mix(in oklab,var(--accent),transparent 70%)"></div>
+            <div>
+              <strong>Wireshark PSA: Stealing Cookies & HTTP creds</strong>
+              <div style="color:var(--muted);font-size:14px">Live demo I give to students to show why TLS matters.</div>
+            </div>
+          </div>
+          <div class="item">
+            <div style="width:36px;height:36px;border-radius:10px;background:color-mix(in oklab,var(--brand),transparent 70%)"></div>
+            <div>
+              <strong>Home Assistant + Zigbee Automations</strong>
+              <div style="color:var(--muted);font-size:14px">Local‑first automations with Sonoff ZBDongle‑P and HA.</div>
+            </div>
+          </div>
+          <div class="item">
+            <div style="width:36px;height:36px;border-radius:10px;background:color-mix(in oklab,var(--muted),transparent 70%)"></div>
+            <div>
+              <strong>AI Health‑Gap Assistant (POC)</strong>
+              <div style="color:var(--muted);font-size:14px">Offline LLM with vector search for patient‑education gaps.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="section">
+      <h2>Featured Videos</h2>
+      <p class="lead" style="margin:6px 0 14px">Two short demos I often reference in conversations. (Plays inline, no ads when using privacy‑enhanced embeds.)</p>
+      <div class="grid cols-2">
+        <!-- Replace VIDEO_ID_1 and VIDEO_ID_2 with your YouTube IDs or full privacy URLs -->
+        <div class="card video">
+          <iframe src="https://www.youtube-nocookie.com/embed/JCKRQluMpqQ" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="card video">
+          <iframe src="https://www.youtube-nocookie.com/embed/LE31-udDBuA" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section id="highlights" class="section">
+      <h2>Highlights</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <strong>Proxmox Homelab</strong>
+          <p class="lead" style="margin-top:6px">GPU passthrough (RTX 5070 Ti), Windows/Kali/Ubuntu VMs, Docker services, and Zigbee2MQTT.</p>
+        </div>
+        <div class="card">
+          <strong>Security Demos</strong>
+          <p class="lead" style="margin-top:6px">Network sniffing, cookie theft, and password hygiene talks for students and staff.</p>
+        </div>
+        <div class="card">
+          <strong>AI + Security</strong>
+          <p class="lead" style="margin-top:6px">LLM‑powered assistants for ticket triage and HL7 health‑gap extraction (RAG with Weaviate).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Let’s Connect</h2>
+      <div class="grid cols-3">
+        <a class="card btn alt ring" style="justify-content:center" href="mailto:justin@example.com">Email me</a>
+        <a class="card btn alt ring" style="justify-content:center" href="https://www.linkedin.com/in/your-link" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+        <button class="card btn ring copy" style="justify-content:center" data-copy="justin@example.com">Copy my email</button>
+      </div>
+      <p class="lead" style="margin-top:12px">Open to security analyst roles, red‑team internships, and speaking invites.</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© <span id="yr"></span> Justin. Built with plain HTML/CSS. <span class="kbd">1-file site</span></div>
+      <div style="display:flex;gap:10px">
+        <a class="pill" href="#">Top</a>
+        <a class="pill" href="resume.pdf" download>Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD (fill in your real details) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Justin",
+    "jobTitle": "Cybersecurity / Healthcare IT",
+    "url": "https://your-domain.tld/",
+    "sameAs": [
+      "https://www.linkedin.com/in/your-link/",
+      "https://github.com/your-handle"
+    ],
+    "knowsAbout": ["Proxmox","OPNsense","Wireshark","Home Assistant","Zigbee","Weaviate","LLMs"],
+    "hasCredential": ["CompTIA Security+"]
+  }
+  </script>
+
+  <script>
+    // Year + smooth scroll + copy email helper
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{ const id=a.getAttribute('href').slice(1); const el=document.getElementById(id); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); } });
+    });
+    document.querySelectorAll('.copy').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        try { await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy my email', 1600);} catch(e){ btn.textContent=btn.dataset.copy; }
+      });
+    });
+  </script>
+</body>
+</html>
