@@ -37,7 +37,8 @@
     .lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:60ch}
     .stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
     .tag{font-size:12px;padding:6px 10px;background:color-mix(in oklab,var(--brand),transparent 88%); border:1px solid color-mix(in oklab,var(--brand),transparent 70%); color:var(--brand); border-radius:999px}
-    .card{background:var(--elev);border:1px solid color-mix(in oklab,var(--brand),transparent 85%);border-radius:18px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,.18),0 0 0 1px color-mix(in oklab,var(--accent),transparent 88%);transition:transform .08s ease, box-shadow .2s ease} 
+    .card{background:var(--elev);border:1px solid color-mix(in oklab,var(--brand),transparent 85%);border-radius:18px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,.18),0 0 0 1px color-mix(in oklab,var(--accent),transparent 88%);transition:transform .08s ease, box-shadow .2s ease}
+    .card.video{padding:0}  
     .grid{display:grid;gap:16px}
     .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -45,7 +46,7 @@
     h2{font-size:22px;margin:0 0 12px}
     .video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid color-mix(in oklab,var(--muted),transparent 70%)}
     .video iframe{position:absolute;inset:0;width:100%;height:100%}
-    .press-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid color-mix(in oklab,var(--brand),transparent 70%);box-shadow:0 0 0 1px color-mix(in oklab,var(--accent),transparent 85%),0 10px 30px rgba(0,0,0,.2)}
+    .press-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:14px} 
     .press-link:hover .press-img{box-shadow:0 0 0 3px color-mix(in oklab,var(--brand),transparent 60%),0 10px 40px color-mix(in oklab,var(--accent),transparent 85%)}
     .list{display:grid;gap:10px}
     .list .item{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:14px;background:linear-gradient(180deg,color-mix(in oklab,var(--elev),transparent 0%),color-mix(in oklab,var(--elev),transparent 10%))}
@@ -61,7 +62,7 @@
     .copy{cursor:pointer}
     .ring:focus{outline:none; box-shadow:var(--ring)}
     .card:hover{transform:translateY(-2px);box-shadow:0 12px 46px rgba(0,0,0,.26),0 0 0 2px color-mix(in oklab,var(--accent),transparent 70%)}
-    body::before{content:"";position:fixed;inset:-10%;z-index:-1;pointer-events:none;background:radial-gradient(600px 350px at 15% -5%, color-mix(in oklab,var(--brand),transparent 65%), transparent 70%),radial-gradient(700px 420px at 110% 0%, color-mix(in oklab,var(--accent),transparent 68%), transparent 72%);filter:blur(10px);opacity:.9}
+    body::before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(to bottom, rgba(6,8,14,.65), rgba(6,8,14,.75)), url('NASHVILLE-bg.webp') center / cover no-repeat;filter:saturate(115%) contrast(105%)}
   </style>
 </head>
 <body>
@@ -199,7 +200,7 @@
 
     <!-- PC SPECS -->
     <section id="pc-specs" class="section">
-      <h2>Gaming PC — Specs</h2>
+      <h2>PC — Specs</h2>
       <div class="grid cols-3">
         <div class="card">
           <strong>Core</strong>
@@ -218,8 +219,8 @@
         <div class="card">
           <strong>Storage</strong>
           <ul style="margin:10px 0 0 18px;line-height:1.6">
-            <li>Boot: Samsung 990 PRO NVMe 4 TB</li>
-            <li>Bulk: 4 TB HDD</li>
+            <li>Boot: Samsung 990 PRO NVMe 4TB</li>
+            <li>Bulk: 4TB HDD</li>
           </ul>
         </div>
       </div>
@@ -255,7 +256,7 @@
         <a class="card btn alt ring" style="justify-content:center" href="mailto:bigjuicetin@gmail.com">Email me</a>
         <a class="card btn alt ring" style="justify-content:center" href="https://www.linkedin.com/in/justin-wan" target="_blank" rel="noreferrer noopener">LinkedIn</a>
         <a class="card btn alt ring" style="justify-content:center" href="https://github.com/liljuicetin" target="_blank" rel="noreferrer noopener">GitHub</a>
-        <button class="card btn ring copy" style="justify-content:center" data-copy="bigjuicetin@gmail.com">Copy my email</button>
+        
       </div>
       <p class="lead" style="margin-top:12px">Open to security analyst roles, red‑team internships, and speaking invites.</p>
     </section>
@@ -279,7 +280,7 @@
     "jobTitle": "Cybersecurity / Healthcare IT",
     "url": "https://your-domain.tld/",
     "sameAs": [
-      "https://www.linkedin.com/in/your-link/",
+      "https://www.linkedin.com/in/justin-wan/",
       "https://github.com/liljuicetin"
     ],
     "knowsAbout": ["Proxmox","OPNsense","Wireshark","Home Assistant","Zigbee"],
