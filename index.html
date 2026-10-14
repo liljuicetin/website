@@ -19,6 +19,8 @@
     .container{max-width:1080px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px); background:color-mix(in oklab,var(--elev),transparent 35%); border-bottom:1px solid color-mix(in oklab,var(--muted),transparent 70%); z-index:40}
     nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0}
+    .nav-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;min-width:0}
+    .nav-community{border-color:var(--accent);color:var(--text)}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
     .pill{padding:8px 14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:999px;background:color-mix(in oklab,var(--elev),transparent 20%)}
     .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:14px;padding:12px 16px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#04101a;font-weight:700;box-shadow:0 10px 30px color-mix(in oklab,var(--brand),transparent 70%);transition:transform .06s ease, box-shadow .2s ease} 
@@ -28,10 +30,14 @@
     .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
     .hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 8px 0;line-height:1.05;text-shadow:0 0 10px color-mix(in oklab,var(--brand),transparent 70%),0 0 26px color-mix(in oklab,var(--accent),transparent 80%);} 
     .lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:60ch}
+    .founder-line{font-size:15px;line-height:1.5;color:var(--muted)}
+    .founder-line a{color:var(--brand);text-decoration:underline;text-underline-offset:3px}
     .stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
     .tag{font-size:12px;padding:6px 10px;background:color-mix(in oklab,var(--brand),transparent 88%); border:1px solid color-mix(in oklab,var(--brand),transparent 70%); color:var(--brand); border-radius:999px}
     .card{background:var(--elev);border:1px solid color-mix(in oklab,var(--brand),transparent 85%);border-radius:18px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,.18),0 0 0 1px color-mix(in oklab,var(--accent),transparent 88%);transition:transform .08s ease, box-shadow .2s ease}
-    .card.video{padding:0}  
+    .card.video{padding:0}
+    .highlight-feature{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .highlight-feature p{margin:10px 0 6px}
     .grid{display:grid;gap:16px}
     .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -45,6 +51,13 @@
     .list .item{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid color-mix(in oklab,var(--muted),transparent 70%);border-radius:14px;background:linear-gradient(180deg,color-mix(in oklab,var(--elev),transparent 0%),color-mix(in oklab,var(--elev),transparent 10%))}
     footer{padding:28px 0;color:var(--muted);font-size:14px}
     body::before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(to bottom, rgba(6,8,14,.65), rgba(6,8,14,.75)), url('NASHVILLE-bg.webp') center / cover no-repeat;filter:saturate(115%) contrast(105%)}
+    @media (max-width:760px){
+      nav{flex-direction:column;align-items:flex-start;gap:12px}
+      .nav-links{width:100%;justify-content:flex-start;gap:8px}
+      .pill{padding:7px 11px;font-size:14px}
+      .hero{grid-template-columns:1fr;padding:28px 0}
+      .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+    }
   </style>
 </head>
 
@@ -57,7 +70,7 @@
           <span>Justin • Cybersecurity</span>
         </div>
 
-        <div style="display:flex;gap:10px">
+        <div class="nav-links">
           <a class="pill" href="#videos">Videos</a>
           <a class="pill" href="#highlights">Highlights</a>
           <a class="pill" href="#specs">Specs</a>
@@ -66,9 +79,9 @@
 
           <a class="pill" href="/ctf/">CTF</a>
 
-          <!-- NEW LINK -->
           <a class="pill" href="prompt-injection.html"
              style="border-color:var(--brand);color:var(--brand)">Prompt Injection Demo</a>
+          <a class="pill nav-community" href="https://homelabvillage.org/" target="_blank" rel="noopener noreferrer">Home Lab Village ↗</a>
         </div>
       </nav>
     </div>
@@ -80,9 +93,11 @@
       <div>
         <h1>Hi, I’m Justin — Cybersecurity Professional & Homelab Enthusiast</h1>
         <p class="lead">I’ve worked across healthcare IT, cybersecurity operations, and research, and most of my free time somehow turns into another homelab or cybersecurity project.</p>
+        <p class="founder-line"><strong>Founder of <a href="https://homelabvillage.org/" target="_blank" rel="noopener noreferrer">Home Lab Village</a></strong> — a hands-on learning community for cybersecurity, homelabs, and self-hosted infrastructure.</p>
 
         <div class="stack">
           <span class="tag">Security+ Certified</span>
+          <span class="tag">Founder · Home Lab Village</span>
           <span class="tag">Ethical Hackers Club</span>
           <span class="tag">Talks & Live Demos</span>
           <span class="tag">Proxmox + GPU Passthrough</span>
@@ -137,6 +152,14 @@
         <div class="card"><strong>Proxmox Homelab</strong><p class="lead">GPU passthrough, Windows/Kali/Ubuntu VMs.</p></div>
         <div class="card"><strong>Security Demos</strong><p class="lead">Network sniffing, cookie theft demos.</p></div>
         <div class="card"><strong>NCL</strong><p class="lead">96th percentile.</p></div>
+        <div class="card highlight-feature">
+          <div>
+            <strong>Founder — Home Lab Village</strong>
+            <p class="lead">I started a hands-on community to help people learn cybersecurity, networking, and self-hosted infrastructure. At SFISSA Hack the Flag 2026, I led a beginner-friendly workshop using live Proxmox lab VMs.</p>
+            <div style="color:var(--muted);font-size:14px">Build • Break • Learn</div>
+          </div>
+          <a class="btn alt" href="https://homelabvillage.org/" target="_blank" rel="noopener noreferrer">Explore Home Lab Village ↗</a>
+        </div>
       </div>
     </section>
 
